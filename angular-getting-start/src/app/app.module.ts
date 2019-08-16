@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ListProductComponent } from './list-product/list-product.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { AlertsProductComponent } from './alerts-product/alerts-product.component';
+import { DetailsProductComponent } from './details-product/details-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    ListProductComponent
+    ListProductComponent,
+    AlertsProductComponent,
+    DetailsProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
