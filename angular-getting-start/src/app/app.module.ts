@@ -8,6 +8,7 @@ import { ListProductComponent } from './list-product/list-product.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { AlertsProductComponent } from './alerts-product/alerts-product.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DetailsProductComponent } from './details-product/details-product.compo
     TopBarComponent,
     ListProductComponent,
     AlertsProductComponent,
-    DetailsProductComponent
+    DetailsProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
