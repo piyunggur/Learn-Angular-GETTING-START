@@ -1,0 +1,28 @@
+<script>
+  function SelectButton(element) {
+    element.classList.remove("btn-primary");
+    element.classList.add("btn-dark");
+  }
+</script>
+<div class="bg-primary">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <h2 class="navbar-brand text-light" href="#">TestAerosoft</h2>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button id="btn-menu1" class="btn mr-3"
+        [ngClass]="{'btn-dark': btn_id === 'menu1','btn-primary':btn_id === 'menu2'}"
+        (click)="btn_id = 'menu1'" [routerLink]="[ '/edit-type']">
+        จัดการข้อมูลประเภทสินค้า
+      </button>
+      <button id="btn-menu2" class="btn btn-primary"
+        [ngClass]="{'btn-dark': btn_id === 'menu2','btn-primary':btn_id === 'menu1'}"
+        (click)="btn_id = 'menu2'" [routerLink]="[ '/edit-data']">
+        จัดการข้อมูลสินค้า
+      </button>
+    </nav>
+  </div>
+</div>
+<router-outlet></router-outlet>
