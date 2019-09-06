@@ -1,1 +1,54 @@
-<p>edit-type works!</p>
+<div class="container">
+    <div class="row">
+        <div class="card col-12" style="padding: 0px">
+            <div class="card-header bg-secondary">
+                <div class="row justify-content-between">
+                    <div class="col-4 pt-2">
+                        <h5 class="text-light">จัดการข้อมูลประเภทสินค้า</h5>
+                    </div>
+                    <div class="col-4" style="text-align: right">
+                        <button class="btn btn-danger mr-3">ลบที่เลือก</button>
+                        <button class="btn btn-success" (click)="openAddType(AddProductType)">เพิ่มประเภทสินค้าใหม่</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <input type="checkbox" value="" id="checkall">
+                            </th>
+                            <th scope="col">ชื่อประเภทสินค้า</th>
+                            <th scope="col">รายละเอียดประเภทสินค้า</th>
+                            <th scope="col">วันที่เพิ่ม</th>
+                            <th scope="col">วันที่แก้ไขล่าสุด</th>
+                            <th scope="col">การจัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product_type of ProductOnPage; let i = index">
+                            <td><input type="checkbox" value="" id="checkall"></td>
+                            <td>{{product_type.name}}</td>
+                            <td>{{product_type.detail}}</td>
+                            <td>{{product_type.time_start}}</td>
+                            <td>{{product_type.time_end}}</td>
+                            <td>
+                                <button class="btn btn-warning mr-2">1</button>
+                                <button class="btn btn-danger">2</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination [totalItems]=ProductTypes.length [itemsPerPage]="5" (pageChanged)="pageChanged($event)">
+                </pagination>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #AddProductType>
+    <app-add-type (closeBtnClick)="closeModal()" (addType)="outFormType($event)"> </app-add-type>
+</ng-template>

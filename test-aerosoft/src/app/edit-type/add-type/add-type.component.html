@@ -1,0 +1,24 @@
+<div class="modal-content">
+  <div class="modal-header modal-header-info">
+    <h2 class="modal-title">
+      <i class="fa fa-credit-card"></i> เพิ่มประเภทสินค้าใหม่
+    </h2>
+    <button type="button" class="close" (click)="close()">
+      <span>&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="formType">
+      <p>ชื่อประเภทสินค้า</p>
+      <input type="text" class="form-control input" id="name" formControlName="name" placeholder="name type product">
+      <p class="mt-4">รายละเอียดประเภทสินค้า</p>
+      <textarea class="form-control input" id="detail" rows="3" formControlName="detail" placeholder="detail type product"></textarea>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+      <button type="submit" (click)="outFormType()" class="btn btn-success">บันทึกข้อมูล</button>
+    <button type="button" (click)="close()" class="btn btn-danger">ยกเลิก</button>
+  </div>
+</div>

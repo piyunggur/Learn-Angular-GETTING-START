@@ -5,24 +5,29 @@
   }
 </script>
 <div class="bg-primary">
-  <div class="container">
+  <div class="container" style="padding: 0px">
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <h2 class="navbar-brand text-light" href="#">TestAerosoft</h2>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <button id="btn-menu1" class="btn mr-3"
-        [ngClass]="{'btn-dark': btn_id === 'menu1','btn-primary':btn_id === 'menu2'}"
-        (click)="btn_id = 'menu1'" [routerLink]="[ '/edit-type']">
-        จัดการข้อมูลประเภทสินค้า
-      </button>
-      <button id="btn-menu2" class="btn btn-primary"
-        [ngClass]="{'btn-dark': btn_id === 'menu2','btn-primary':btn_id === 'menu1'}"
-        (click)="btn_id = 'menu2'" [routerLink]="[ '/edit-data']">
-        จัดการข้อมูลสินค้า
-      </button>
+      <div class="col-12" style="padding: 0px">
+        <div class="row justify-content-between">
+          <div class="col-5">
+            <button id="btn-menu1" class="btn mr-3"
+              [ngClass]="{'btn-dark': btn_id === 'menu1','btn-primary':btn_id === 'menu2'}" (click)="btn_id = 'menu1'"
+              [routerLink]="[ '/edit-type']">
+              จัดการข้อมูลประเภทสินค้า
+            </button>
+            <button id="btn-menu2" class="btn btn-primary"
+              [ngClass]="{'btn-dark': btn_id === 'menu2','btn-primary':btn_id === 'menu1'}" (click)="btn_id = 'menu2'"
+              [routerLink]="[ '/edit-data']">
+              จัดการข้อมูลสินค้า
+            </button>
+          </div>
+          <div class="col-3" style="text-align: right">
+            <h2 class="navbar-brand text-light" href="#">ระบบจัดการจ้อมุลสินค้า</h2>
+          </div>
+        </div>
+      </div>
     </nav>
   </div>
 </div>
+<br>
 <router-outlet></router-outlet>

@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+ /* modal */
+.modal-dialog {
+    width: 100%;
+    overflow: auto;
+  }
+  
+  .modal {
+    padding-right: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .modal-xlg {
+    max-width: 500px;
+  }
+  
+  .modal-xxlg {
+    max-width: 1200px;
+  }
