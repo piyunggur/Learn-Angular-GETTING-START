@@ -8,6 +8,7 @@ import { EditDataComponent } from './edit-data/edit-data.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AddTypeComponent } from './edit-type/add-type/add-type.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export let AppInjector: Injector;
 @NgModule({
@@ -20,6 +21,8 @@ export let AppInjector: Injector;
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     PaginationModule.forRoot(),
     ModalModule.forRoot()
   ],

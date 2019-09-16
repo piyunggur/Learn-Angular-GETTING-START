@@ -10,10 +10,14 @@
 
   <div class="modal-body">
     <form [formGroup]="formType">
-      <p>ชื่อประเภทสินค้า</p>
-      <input type="text" class="form-control input" id="name" formControlName="name" placeholder="name type product">
-      <p class="mt-4">รายละเอียดประเภทสินค้า</p>
-      <textarea class="form-control input" id="detail" rows="3" formControlName="detail" placeholder="detail type product"></textarea>
+      <div class="form-group">
+          <p>ชื่อประเภทสินค้า</p>
+          <input type="text" class="form-control input" id="name" formControlName="name" placeholder="name type product">
+      </div>
+      <div class="form-group">
+          <p class="mt-4">รายละเอียดประเภทสินค้า</p>
+          <textarea class="form-control input" id="detail" rows="3" formControlName="detail" placeholder="detail type product"></textarea>
+      </div>
     </form>
   </div>
 

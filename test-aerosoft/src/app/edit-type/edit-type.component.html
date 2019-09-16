@@ -50,5 +50,5 @@
 </div>
 
 <ng-template #AddProductType>
-    <app-add-type (closeBtnClick)="closeModal()" (addType)="outFormType($event)"> </app-add-type>
+    <app-add-type (closeBtnClick)="closeModal()" [date_start]="date_start" (OpenEditModal)="addType($event)"> </app-add-type>
 </ng-template>

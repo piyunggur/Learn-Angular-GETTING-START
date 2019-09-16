@@ -18,28 +18,31 @@ import { HasModal } from './../shared/classes/has-modal';
 })
 
 export class EditTypeComponent extends HasModal implements OnInit {
-  Data
-  Mockeup = {
-    name: "ประเภทสินค้าชนิดที่ 1",
-    detail: "แสดงรายละเอียดของ ประเภทสินค้าชนิดที่ 1",
-    time_start: "12-05-2016 12:21:00",
-    time_end: "14-05-2016 08:21:00"
-  }
-
-  ProductTypes = [
-    this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup
-    , this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup
-    , this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup, this.Mockeup
-  ]
-
-  ProductOnPage = this.ProductTypes.slice(0, 5)
+  Mockeup: any
+  ProductOnPage: any
+  ProductTypes = []
+  date_start: any
 
   constructor() {
     super()
   }
 
   ngOnInit() {
-    console.log(typeof this.ProductTypes)
+    this.makeDataType()
+  }
+
+  makeDataType(){
+    for(let i = 0 ; i <  23; i++){
+      this.Mockeup = {
+        name: "ประเภทสินค้าชนิดที่ "+i,
+        detail: "แสดงรายละเอียดของ ประเภทสินค้าชนิดที่ "+i,
+        time_start: "12-05-2016 12:21:00",
+        time_end: "14-05-2016 08:21:00"
+      }
+      this.ProductTypes.push(this.Mockeup)
+    }
+    
+    this.ProductOnPage = this.ProductTypes.slice(0, 5)
   }
 
   pageChanged(event: any): void {
@@ -49,16 +52,12 @@ export class EditTypeComponent extends HasModal implements OnInit {
   }
 
   openAddType(template: TemplateRef<any>) {
+    this.date_start = new Date();
     this.openModal(template, { class: 'modal-xlg' });
   }
 
-  addType() {
-    this.Data = {
-      name: " 1",
-      detail: "แสดงรายละเอียดของ ประเภทสินค้าชนิดที่ 1",
-      time_start: "12-05-2016 12:21:00",
-      time_end: "14-05-2016 08:21:00"
-    }
+  addType(event: any) {
+    this.ProductTypes.push(event)
   }
 
 }

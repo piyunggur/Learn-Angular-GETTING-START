@@ -1,0 +1,29 @@
+<div class="bg-primary">
+    <div class="container-custom">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-12" style="text-align: center">
+                <p class="text-white" style="font-weight: bold;font-size: 21px">ชำระเงิน</p>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container-custom">
+    <div class="col-12">
+        <div class="row pt-5 pb-5">
+            <div class="col-8">
+                <img src={{img[index_movie].src_full}} alt={{img[index_movie].alt}} style="width: 100%;">
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 100%;height: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{img[index_movie].alt}}</h5>
+                        <p class="card-text">จำนวนจอง : {{count_chair}} คน</p>
+                        <p class="card-text">ราคารวม : {{count_chair * 100}} บาท</p>
+                        <p class="card-text">ราคาต่อที่นั่ง : 1 / 100 บาท</p>
+                        <div class="btn btn-primary" [routerLink]="['/success']">ชำระเงิน</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RoomComponent } from './room/room.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { PaymentComponent } from './payment/payment.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    RoomComponent
+    RoomComponent,
+    PaymentComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

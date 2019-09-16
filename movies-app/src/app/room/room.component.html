@@ -1,24 +1,30 @@
 <div class="bg-primary">
-    <div class="container">
+    <div class="container-custom">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="col-12">
                 <div class="row">
                     <div class="col">
                     </div>
                     <div class="col" style="text-align: center">
-                        <p class="text-white" style="font-weight: bold;font-size: 21px">{{name_movices}}</p>
+                        <p class="text-white" style="font-weight: bold;font-size: 21px">{{name_movies}}</p>
                     </div>
                     <div class="col" style="text-align: right">
-                        <button class="btn btn-light text-primary">ยืนยัน</button>
+                        <button class="btn btn-light text-primary" [routerLink]="['/payment',indexs_movies,count_chair]">ยืนยัน</button>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
 </div>
-<div class="container pb-5">
-    <div class="row" id="test">
-        <span>G</span>
-        <button class="btn-custom" *ngFor="let number of numbers">{{number.n}}</button>
+<div class="container-custom pb-5 pt-5">
+    <!-- style="margin-left: 3%;margin-right:3%;"  -->
+    <div class="row mt-2 mr-auto ml-auto" id="test" *ngFor="let row of data_room;index as index_row">
+        <p class="text-custom">{{row.name}}</p>
+        <ng-container *ngFor="let chair of row.row">
+            <button #data_chair class="btn-custom" (click)="selectBTN(index_row,chair)"
+            [ngClass]="{'color-default':chair.status === 'idle','color-select':chair.status === 'select'}">
+                {{chair.number}}
+            </button>
+        </ng-container>
     </div>
 </div>
