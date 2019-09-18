@@ -7,7 +7,7 @@ import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {path: "" , component: HomePageComponent},
-  {path: "room/:name_movies/:index" , component: RoomComponent},
+  {path: "room/:index" , component: RoomComponent},
   {path: "payment/:index/:count_chair", component: PaymentComponent},
   {path: "success", component: SuccessComponent}
 ];

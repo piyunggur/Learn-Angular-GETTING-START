@@ -23,7 +23,7 @@
         <div class="col-2 mt-5 mr" *ngFor="let item of image_names;index as indexs">
             <img src={{item.src}} alt={{item.alt}} style="width: 100%">
             <div style="text-align: center">
-                <button type="button" class="btn btn-primary mt-3" [routerLink]="['/room',item.alt,indexs]">ดูหนัง</button>
+                <button type="button" class="btn btn-primary mt-3" [routerLink]="['/room',indexs]">ดูหนัง</button>
             </div>
         </div>
     </div>
